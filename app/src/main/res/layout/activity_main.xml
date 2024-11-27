@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/bottomNavMainBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/black_charleston_80"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/white_cultured_4"
+        app:strokeWidth="@dimen/border_size">
+
+        <edu.vio.navigation.BubbleTabBar
+            android:id="@+id/bottomNavMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="8dp"
+            app:border_color="@color/white_cultured_4"
+            app:container_color="@color/white_cultured"
+            app:disabled_icon_color="@color/silver_sonic"
+            app:gap="8dp"
+            app:horizontal_padding="12dp"
+            app:icon_color="@color/white_cultured"
+            app:icon_size="24dp"
+            app:tab_corner_radius="60dp"
+            app:title_size="12sp"
+            app:vertical_padding="8dp" />
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="mineShaft1">#3D3D3D</color>
+    <color name="surface_bright">#2F3037</color>
+
+    <!--  New bottom navigation bar color   -->
+    <color name="white_cultured_4">#0AF4F4F8</color>
+    <color name="white_cultured_10">#1AF4F4F8</color>
+    <color name="white_cultured_16">#29F4F4F8</color>
+    <color name="white_cultured">#F4F4F8</color>
+    <color name="silver_sonic_36">#5C76767F</color>
+    <color name="silver_sonic_40">#6676767F</color>
+    <color name="silver_sonic">#76767F</color>
+    <color name="black_charleston_80">#CC26262C</color>
+    <color name="black_charleston">#26262C</color>
+    <color name="black_charleston_60">#9926262C</color>
+    <color name="gray_athens">#F4F4F8</color>
+    <color name="gray_athens_50">#80F4F4F8</color>
+    <color name="gray_outer_space">#45454A</color>
+    <color name="gray_outer_space_alpha_24">#3D45454A</color>
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="bubble_horizontal_padding">12dp</dimen>
+    <dimen name="bubble_vertical_padding">8dp</dimen>
+    <dimen name="bubble_icon_size">24dp</dimen>
+    <dimen name="bubble_title_size">12dp</dimen>
+    <dimen name="bubble_icon_padding">8dp</dimen>
+    <dimen name="bubble_corner_radius">60dp</dimen>
+    <dimen name="bubble_border_width">1dp</dimen>
+
+    <dimen name="margin">16dp</dimen>
+    <dimen name="margin_small_x">10dp</dimen>
+    <dimen name="margin_small_xx">12dp</dimen>
+    <dimen name="margin_small_xxx">14dp</dimen>
+    <dimen name="margin_medium_x">18dp</dimen>
+
+    <!-- Profile -->
+    <dimen name="profile_horizontal_padding">@dimen/margin</dimen>
+    <dimen name="gap_size">@dimen/margin_small_xx</dimen>
+    <dimen name="divider">1dp</dimen>
+    <dimen name="divider_active">2dp</dimen>
+    <dimen name="profile_avatar_size_small">92dp</dimen>
+    <dimen name="profile_avatar_size">64dp</dimen>
+    <dimen name="profile_avatar_size_big">110dp</dimen>
+    <dimen name="profile_text_input_height">36dp</dimen>
+    <dimen name="border_size">1dp</dimen>
+    <dimen name="border_size_small">0.5dp</dimen>
+    <dimen name="border_size_small_x">0.75dp</dimen>
+    <dimen name="border_size_x">2dp</dimen>
+    <dimen name="profile_playlist_shadow_height">20dp</dimen>
+    <dimen name="profile_item_playlist_height">139dp</dimen>
+    <dimen name="profile_item_playlist_width">180dp</dimen>
+    <dimen name="profile_register_button_width">180dp</dimen>
+    <dimen name="playlist_info_thumb_margin_horizontal">35dp</dimen>
+</resources>
