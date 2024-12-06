@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         menus.add(new BubbleMenuItem(menus.size(), "Trang chủ", R.drawable.baseline_home_24, true, true));
         menus.add(new BubbleMenuItem(menus.size(), "Trang chủ", R.drawable.baseline_home_24, true, false));
         menus.add(new BubbleMenuItem(menus.size(), "Trang chủ", R.drawable.baseline_home_24, true, false));
-        menus.add(new BubbleMenuItem(menus.size(), "Tài khoản", edu.vio.navigation.R.drawable.ic_account, true, false));
+        menus.add(new BubbleMenuItem(menus.size(), "Tài khoản", R.drawable.baseline_person_24, true, false));
         binding.bottomNavMain.setMenus(menus);
 
         binding.bottomNavMain.setOnBubbleReselectedListener(id -> {
