@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1012063806990",
+    "project_id": "violympic-a876f",
+    "storage_bucket": "violympic-a876f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1012063806990:android:311a250f02dcba2afe7e5f",
+        "android_client_info": {
+          "package_name": "edu.vio.violympic"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDi6OQM1SM1jS-0CaUH2hI_IG2xEBE2WzA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
