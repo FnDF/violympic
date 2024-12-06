@@ -15,6 +15,7 @@ import edu.vio.navigation.BubbleTabBar;
 import edu.vio.navigation.parser.BubbleMenuItem;
 import edu.vio.violympic.base.BaseViewModel;
 import edu.vio.violympic.databinding.ActivityMainBinding;
+import edu.vio.violympic.presenters.profile.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,7 +42,22 @@ public class MainActivity extends AppCompatActivity {
         binding.bottomNavMain.setMenus(menus);
 
         binding.bottomNavMain.setOnBubbleReselectedListener(id -> {
-
+            switch (id) {
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(binding.container.getId(), new ProfileFragment())
+                            .addToBackStack("Profile")
+                            .commitAllowingStateLoss();
+                    break;
+                default:
+                    break;
+            }
         });
     }
 

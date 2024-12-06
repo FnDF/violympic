@@ -29,6 +29,11 @@
             android:name=".RegisterActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustNothing" />
+
+        <activity
+            android:name=".presenters.admin.AdminActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustNothing" />
     </application>
 
 </manifest>

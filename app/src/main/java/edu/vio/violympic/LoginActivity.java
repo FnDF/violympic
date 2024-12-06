@@ -43,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         binding.btnDemoAdmin.setOnClickListener(v -> {
-            
+
         });
     }
 
