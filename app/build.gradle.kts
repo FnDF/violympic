@@ -1,5 +1,6 @@
 plugins {
 	id("com.android.application")
+	id("com.google.gms.google-services")
 }
 
 android {
@@ -38,6 +39,7 @@ dependencies {
 	implementation(libs.material)
 	implementation(libs.androidx.activity)
 	implementation(libs.androidx.constraintlayout)
+
 	testImplementation(libs.junit)
 	androidTestImplementation(libs.androidx.junit)
 	androidTestImplementation(libs.androidx.espresso.core)
@@ -45,4 +47,10 @@ dependencies {
 	implementation(libs.androidx.fragment.ktx)
 	implementation(libs.core.ktx)
 	implementation(libs.coil)
+
+	// firebase
+	implementation(platform(libs.firebase.bom))
+	implementation(libs.firebase.analytics)
+	implementation(libs.firebase.auth)
+	implementation(libs.firebase.database)
 }
