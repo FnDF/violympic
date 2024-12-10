@@ -86,4 +86,7 @@
     <string name="content">Nội dung</string>
 
     <string name="ct_header">header</string>
+    <string name="itv_id_topic">Mã đề: #%s</string>
+    <string name="itv_subject">Bộ môn: %s</string>
+    <string name="itv_grade_th">Dành cho học sinh từ lớp %s trở lên</string>
 </resources>

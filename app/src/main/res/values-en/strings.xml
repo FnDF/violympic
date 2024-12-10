@@ -84,4 +84,8 @@
     <string name="date_upload">Date upload</string>
     <string name="content">Content</string>
     <string name="ct_header">header</string>
+
+    <string name="itv_id_topic">Code: #%s</string>
+    <string name="itv_subject">Subject: %s</string>
+    <string name="itv_grade_th">For students %sth grade and up</string>
 </resources>

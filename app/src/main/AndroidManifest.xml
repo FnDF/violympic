@@ -34,6 +34,11 @@
             android:name=".presenters.admin.AdminActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustNothing" />
+
+        <activity
+            android:name=".presenters.admin.topic.TopicActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustNothing" />
     </application>
 
 </manifest>
