@@ -10,7 +10,10 @@ import androidx.lifecycle.ViewModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.Query;
+import com.google.firebase.firestore.Filter;
+import com.google.firebase.firestore.FirebaseFirestore;
 
+import edu.vio.violympic.model.UserFr;
 import edu.vio.violympic.utils.firebase.FirebaseUtil;
 
 public class RegisterViewModel extends ViewModel {
@@ -24,6 +27,12 @@ public class RegisterViewModel extends ViewModel {
 
     public LiveData<Boolean> getStateUsernameIsExists() {
         return stateUsernameIsExists;
+    }
+
+    private final MutableLiveData<Boolean> stateRegisterObserver = new MutableLiveData<>(false);
+
+    public LiveData<Boolean> getStateRegisterObserver() {
+        return stateRegisterObserver;
     }
 
     // endregion
@@ -79,23 +88,40 @@ public class RegisterViewModel extends ViewModel {
     }
 
     public void register(String email, String password, String fullName, String username, String phone) {
-        Query query = FirebaseUtil.getUserByUsername(username);
-        query.get().addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                if (task.getResult().getChildrenCount() > 0) {
-                    stateUsernameIsExists.postValue(true);
-                } else {
-                    mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task1 -> {
-                        if (task.isSuccessful()) {
-                            FirebaseUser user = mAuth.getCurrentUser();
-
-
-                        }
-                    }).addOnFailureListener(e -> {
-
-                    });
-                }
-            }
-        });
+//        Query query = FirebaseUtil.getUserByUsername(username);
+//        query.get().addOnCompleteListener(task -> {
+//            if (task.isSuccessful()) {
+//                if (task.getResult().getChildrenCount() > 0) {
+//                    stateUsernameIsExists.postValue(true);
+//                } else {
+//                    mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task1 -> {
+//                        if (task.isSuccessful()) {
+//                            FirebaseUser user = mAuth.getCurrentUser();
+//
+//                        }
+//                    }).addOnFailureListener(e -> {
+//
+//                    });
+//                }
+//            }
+//        });
+        UserFr user = new UserFr(email, password, fullName, username, phone);
+        FirebaseFirestore.getInstance()
+                .collection("users")
+                .where(Filter.or(Filter.equalTo("username", username), Filter.equalTo("email", email)))
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful() && task.getResult() != null && !task.getResult().isEmpty()) {
+                        stateUsernameIsExists.postValue(true);
+                    } else {
+                        FirebaseFirestore.getInstance().collection("users").add(user).addOnCompleteListener(task1 -> {
+                            stateRegisterObserver.postValue(true);
+                        }).addOnFailureListener(e1 -> {
+                            stateRegisterObserver.postValue(true);
+                        });
+                    }
+                }).addOnFailureListener(e -> {
+                    stateRegisterObserver.postValue(true);
+                });
     }
 }

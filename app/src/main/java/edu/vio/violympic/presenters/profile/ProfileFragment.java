@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import edu.vio.violympic.LoginActivity;
+import edu.vio.violympic.MainActivity;
 import edu.vio.violympic.RegisterActivity;
 import edu.vio.violympic.databinding.FragmentProfileBinding;
 import edu.vio.violympic.viewmodel.AccountViewModel;
@@ -34,6 +35,11 @@ public class ProfileFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         setupObserver();
 
+        if (((MainActivity) requireActivity()).currentUser != null) {
+
+        } else {
+            binding.layoutLogin.setVisibility(View.GONE);
+        }
         binding.btnLogin.setOnClickListener(v -> {
             startActivity(new Intent(requireActivity(), LoginActivity.class));
         });

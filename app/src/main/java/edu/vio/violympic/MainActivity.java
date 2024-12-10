@@ -15,11 +15,13 @@ import edu.vio.navigation.BubbleTabBar;
 import edu.vio.navigation.parser.BubbleMenuItem;
 import edu.vio.violympic.base.BaseViewModel;
 import edu.vio.violympic.databinding.ActivityMainBinding;
+import edu.vio.violympic.model.UserFr;
 import edu.vio.violympic.presenters.profile.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    public UserFr currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        if (getIntent() != null && getIntent().hasExtra("user")) {
+            currentUser = (UserFr) getIntent().getSerializableExtra("user");
+        }
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);

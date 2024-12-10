@@ -34,6 +34,22 @@ public class LoginActivity extends AppCompatActivity {
         });
         viewModel = new ViewModelProvider(this).get(LoginViewModel.class);
         viewModel.initFirebaseAuth();
+        viewModel.getStateRegisterObserver().observe(this, user -> {
+            if (user != null) {
+                // Login success
+                Intent intent = new Intent(this, MainActivity.class);
+                intent.putExtra("user", user);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
+            } else {
+                if (!binding.edtPassword.getText().toString().isEmpty()) {
+                    // Login fail
+                    binding.edtUsername.setError("Invalid username or password");
+                    binding.edtPassword.setError("Invalid username or password");
+                }
+            }
+        });
 
         binding.btnLogin.setOnClickListener(v -> {
             handleLogin();
@@ -52,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
         // Check if email/username and password are empty
         if (isValidInput()) {
             String emailText = binding.edtUsername.getText().toString().trim();
-            String passwordText = binding.edtUsername.getText().toString().trim();
+            String passwordText = binding.edtPassword.getText().toString().trim();
             viewModel.login(this, emailText, passwordText);
         }
     }

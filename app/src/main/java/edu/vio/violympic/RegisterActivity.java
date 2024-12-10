@@ -3,6 +3,7 @@ package edu.vio.violympic;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.Nullable;
@@ -102,6 +103,15 @@ public class RegisterActivity extends AppCompatActivity {
         viewModel.getStateUsernameIsExists().observe(this, isExists -> {
             if (isExists) {
                 binding.edtUsername.setError("Username đã tồn tại");
+            }
+        });
+        viewModel.getStateRegisterObserver().observe(this, registered -> {
+            if (registered) {
+                Toast.makeText(this, "Đăng ký thành công", Toast.LENGTH_SHORT).show();
+                finish();
+            } else {
+                hideLoading();
+                Toast.makeText(this, "Đăng ký thất bại", Toast.LENGTH_SHORT).show();
             }
         });
     }
